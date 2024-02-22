@@ -1,0 +1,36 @@
+{% extends 'tools/layout.html' %}
+{%block title%}Cloud{%endblock title%}
+
+
+{% block content %}
+
+<div class="container text-center">
+    <div class="row justify-content-center py-2">
+        <div class="col py-2">
+            <h1>Генератор серії Cloud(XM)</h1>
+        </div>
+        <div class=" row row-cols-3 justify-content-center p-3">
+            <div class="col p-3 ">
+                <form action="{% url 'tools:cloud' %}" method="post" class="form-control border-none p-2">
+                    {% csrf_token %}
+                    <p class="form-text col-form-label">Введіть ключ для генерації: <input class="form-control " type="tel" pattern="[0-9]{8-10}"
+                            placeholder="52546985 or 20201231(YY:mm:dd)" name="xm" /required>
+                    <p class="form-text text-muted">Дата або 8-ми значний ключ.</p>
+                    </p>
+                    <input type="hidden" name="hidden_field" value="sdgsdfg6656dffgkzsqrc682gbd">
+                    <b class="d-flex justify-content-center p-2"><input class="btn btn-dark" type="submit"
+                            value="Generate code"></p></b>
+                </form>
+            </div>
+            <div class="col p-2">
+                {% if request.POST %}
+                <p class="p-2 m-2">Скидання по даті: {{dict.before20161122}}
+                <p class="text-muted">Для девайсів до 2016/11/22 візьміть перші 6 символів.</p>
+                </p>
+                <p class="p-2">Скидання по ключу: {{dict.securityCode}}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

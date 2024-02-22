@@ -1,0 +1,28 @@
+<!doctype html>
+{% load static %}
+<html lang="uk">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors, Alexbrob">
+    <meta name="generator" content="Hugo 0.108.0">
+    <link href="{% static 'tools/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'tools/css/sidebars.css' %}" rel="stylesheet">
+    <link href="{% static 'tools/img/favicon.ico' %}" rel="icon">
+    <title>{%block title%}{%endblock title%}</title>
+</head>
+
+<body>
+
+    <main class="d-flex flex-nowrap">
+        {% include 'include/sidebar.html'%}
+        {% block content%}
+        {% endblock content %}
+    </main>
+
+</body>
+
+
+</html>

@@ -1,0 +1,15 @@
+{% extends 'tools/layout.html' %}
+{%block title%}HDD calculate{%endblock title%}
+{% load static %}
+
+{% block content %}
+
+<link rel="shortcut icon" href="{% static 'tools/fast.ico' %}">
+<link href="{% static 'tools/css/app.332caf93ad336a1aea5aec3abc91c657.css ' %}"  rel=stylesheet>
+<div class="container text-center">
+    <div id=app></div>
+    <script type=text/javascript src="{% static 'tools/js/manifest.3092b32052a63aba333d.js' %}"></script>
+    <script type=text/javascript src="{% static 'tools/js/vendor.fe4431bd75d7efca6f37.js' %}"></script>
+    <script type=text/javascript src="{% static 'tools/js/app.2ab392f6f6f774b4bb7f.js' %}"></script>
+</div>
+{% endblock %}
